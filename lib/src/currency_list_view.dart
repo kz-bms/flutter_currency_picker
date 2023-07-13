@@ -237,7 +237,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
       return Image.asset(
         currency.flag!.imagePath,
         package: 'currency_picker',
-        width: 27,
+        width: 30,
       );
     }
 
