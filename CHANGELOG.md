@@ -1,3 +1,72 @@
+## 2.0.22
+* Add more currencies:
+  - Uzbekistani Sum
+  - Venezuela Bolívar
+  - Iranian rial
+  - Libyan dinar
+  - Tajikistani somoni
+  - Turkmenistani manat
+* Add add an option to show the drag handle
+  ``` Dart
+  showCurrencyPicker(
+    context: context,
+    showDragHandle: true,
+    onSelect: (Currency currency) {
+      print('Select currency: ${currency.name}');
+    },
+  );
+  ```
+  
+## 2.0.21
+* Add more currencies:
+  - Angolan Kwanza
+  - Cuban Peso
+  - Tongan Pa'anga
+  - Malagasy Ariary
+  - Lebanese Pound
+
+## 2.0.20
+*  Trim search query
+  
+## 2.0.19
+* Fix Kazakhstan Tenge decimal separator
+* Fix Barbados Dollar plural name
+* Fix Vietnamese Dong decimal separator
+
+## 2.0.18
+* Add more currencies:
+  - Maldivian Rufiyaa
+* Add styling options for search field input decoration.
+  ``` Dart
+  showCurrencyPicker(
+    context: context,
+    theme: CurrencyPickerThemeData(
+      // Optional. Styles the search field.
+      inputDecoration: InputDecoration(
+        labelText: 'Search',
+        hintText: 'Start typing to search',
+        prefixIcon: const Icon(Icons.search),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: const Color(0xFF8C98A8).withOpacity(0.2),
+          ),
+        ),
+      ),
+    ),
+    onSelect: (Currency currency) {
+      print('Select currency: ${currency.name}');
+    },
+  );
+  ```
+  
+## 2.0.17
+* Add more currencies:
+  - Iraqi dinar
+  - Zimbabwean dollar
+* Fix Tunisian Dinars
+* Fix Bangladeshi Taka
+* Update SDK to `>=2.12.0 <4.0.0`
+
 ## 2.0.16
 * Add more currencies:
   - Tunisian dinar

@@ -123,7 +123,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
           child: widget.showSearchField
               ? TextField(
                   controller: _searchController,
-                  decoration: InputDecoration(
+                  decoration: widget.theme?.inputDecoration ?? InputDecoration(
                     labelText: widget.searchHint ?? "Search",
                     hintText: widget.searchHint ?? "Search",
                     prefixIcon: const Icon(Icons.search),
@@ -148,7 +148,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                   child: Divider(thickness: 1),
                 ),
               ],
-              ..._filteredList.map<Widget>((currency) => _listRow(currency))
+              ..._filteredList.map<Widget>((currency) => _listRow(currency)),
             ],
           ),
         ),
@@ -203,7 +203,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                                   ? subtitleTextStyle
                                   : titleTextStyle,
                             ),
-                          ]
+                          ],
                         ],
                       ),
                     ),
@@ -258,8 +258,8 @@ class _CurrencyListViewState extends State<CurrencyListView> {
       searchResult = _currencyList
           .where(
             (c) =>
-                c.name.toLowerCase().contains(query.toLowerCase()) ||
-                c.code.toLowerCase().contains(query.toLowerCase()),
+                c.name.toLowerCase().contains(query.toLowerCase().trim()) ||
+                c.code.toLowerCase().contains(query.toLowerCase().trim()),
           )
           .toList();
     }

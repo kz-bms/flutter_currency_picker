@@ -27,14 +27,13 @@ class HomePage extends StatelessWidget {
           onPressed: () {
             showCurrencyPicker(
               context: context,
-              showFlag: true,
+              showDragHandle: true,
               showSearchField: true,
               showCurrencyName: true,
               showCurrencyCode: true,
               onSelect: (Currency currency) {
                 print('Select currency: ${currency.name}');
               },
-              favorite: ['SEK'],
             );
           },
           child: const Text('Show currency picker'),
